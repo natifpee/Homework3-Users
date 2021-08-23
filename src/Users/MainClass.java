@@ -1,13 +1,12 @@
 package Users;
-
+import javax.swing.plaf.nimbus.State;
+import java.util.*;
 public class MainClass {
 
 
     public static void main(String[] args) {
-        int age = 19;
         String name = "Danny Jiménez";
-        double salary = 200.32;
-
+        Date bornDate = new Date(101, 6, 2);
 
         User myData;
         myData = new User();
@@ -15,12 +14,15 @@ public class MainClass {
         myData.setName(name);
         myData.setLogin("dJimenez");
         myData.setPassword("djimenez02");
-        myData.setAge(age);
         myData.setState(States.UNACTIVE);
+        myData.setAge(2, 7,2002);
+        System.out.print(myData);
 
-        User user2 = new User("Ericka", "eSolano", "esolano");
-        User.setMaximumAttempts(5);
 
-        System.out.println(user2 + "\n" + myData);
+        myData.setState(States.SUSPENDED);
+        myData.setAge(bornDate);
+        System.out.println(myData);
+
+
     }
 }
