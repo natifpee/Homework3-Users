@@ -4,23 +4,23 @@ public class MainClass {
 
 
     public static void main(String[] args) {
-        int valor = 10;
-        String nombre = "Luis";
-        double salario = 200.32;
+        int age = 19;
+        String name = "Danny Jiménez";
+        double salary = 200.32;
 
 
-        User misDatos;
-        misDatos = new User();
+        User myData;
+        myData = new User();
 
-        misDatos.setNombre("Danny Jiménez");
-        misDatos.setLogin("dJimenez");
-        misDatos.setPassword("djimenez02");
-        misDatos.setEdad(19);
-        misDatos.setEstado(States.UNACTIVE);
+        myData.setName(name);
+        myData.setLogin("dJimenez");
+        myData.setPassword("djimenez02");
+        myData.setAge(age);
+        myData.setState(States.UNACTIVE);
 
         User user2 = new User("Ericka", "eSolano", "esolano");
-        User.setMaximoIntentos(5);
+        User.setMaximumAttempts(5);
 
-        System.out.println(user2 + "\n" + misDatos);
+        System.out.println(user2 + "\n" + myData);
     }
 }

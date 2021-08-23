@@ -5,46 +5,46 @@ public class User {
     //Sintaxis de un atributo
     //Visibilidad tipoDate identificador;
 
-    private String nombre;
+    private String name;
     private String login;
     private String password;
-    private States estado = States.ACTIVE;
-    private int edad;
-    private static int maximoIntentos = 3;
+    private States state = States.ACTIVE;
+    private int age;
+    private static int maximumAttempts = 3;
 
     public User(){
 
     }
 
-    public User(String nombre, String login){
-        this.nombre = nombre;
+    public User(String name, String login){
+        this.name = name;
         this.login = login;
     }
 
-    public User(String nombre, String login, String password){
-        this.nombre = nombre;
+    public User(String name, String login, String password){
+        this.name = name;
         this.login = login;
         this.password = password;
     }
 
-    public User(String nombre, String login, String password, int edad){
-        this.nombre = nombre;
+    public User(String name, String login, String password, int age){
+        this.name = name;
         this.login = login;
-        this.edad = edad;
+        this.age = age;
         this.password = password;
     }
-    public User(int edad, String nombre, String login){
-        this.nombre = nombre;
+    public User(int age, String name, String login){
+        this.name = name;
         this.login = login;
-        this.edad = edad;
+        this.age = age;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
@@ -63,40 +63,40 @@ public class User {
         this.password = password;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getAge() {
+        return age;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public static int getMaximoIntentos() {
-        return maximoIntentos;
+    public static int getMaximumAttempts() {
+        return maximumAttempts;
     }
 
-    public static void setMaximoIntentos(int maximoIntentos) {
-        User.maximoIntentos = maximoIntentos;
+    public static void setMaximumAttempts(int maximumAttempts) {
+        User.maximumAttempts = maximumAttempts;
     }
 
-    public States getEstado() {
-        return estado;
+    public States getState() {
+        return state;
     }
 
-    public void setEstado(States estado) {
-        this.estado = estado;
+    public void setState(States state) {
+        this.state = state;
     }
 
     @Override
     public String toString() {
         return "User \n"
                 + "-----------------------------------"+ "\n" +
-                "Nombre: " + nombre + "\n" +
+                "Nombre: " + name + "\n" +
                 "Login: " + login + "\n" +
                 "Password: " + password + "\n" +
-                "Estado: " + estado + "\n" +
-                "Edad: " + edad + "\n" +
-                "Maximo de intentos: " + maximoIntentos + "\n" +
+                "Estado: " + state + "\n" +
+                "Edad: " + age + "\n" +
+                "Maximo de intentos: " + maximumAttempts + "\n" +
                 "-------------------------------------" + "\n";
     }
 }
