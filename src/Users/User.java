@@ -11,6 +11,8 @@ public class User {
     private String password;
     private States state = States.ACTIVE;
     private int age;
+    private int phone;
+    private String email;
     private static int maximumAttempts = 3;
 
     public User(){
@@ -146,6 +148,22 @@ public class User {
 
     public void setState(States aState) {
         this.state = aState;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Listo la parte 1.">
-      <change afterPath="$PROJECT_DIR$/Homework3.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Users/diagram.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework 3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework 3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tareas_Act03_Modifcación_objeto_Usuario_UML_y_Java_G40.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Tareas_Act03_Modifcación_objeto_Usuario_UML_y_Java_G40.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/MainClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3 - DannyJimenez - NatifpeeDuran - KevinSalazar.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tareas_Act03_Modifcación_objeto_Usuario_UML_y_Java_G40.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,19 +69,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainClass" />
@@ -99,7 +84,9 @@
       <option name="presentableId" value="Default" />
       <updated>1629677956151</updated>
       <workItem from="1629677957638" duration="175000" />
-      <workItem from="1629678268572" duration="10415000" />
+      <workItem from="1629678268572" duration="11456000" />
+      <workItem from="1629750559219" duration="26000" />
+      <workItem from="1629750802532" duration="2531000" />
     </task>
     <task id="LOCAL-00001" summary="Documentos iniciales">
       <created>1629677988859</created>
@@ -122,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629679168939</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Listo la parte 1.">
+      <created>1629707910209</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629707910209</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
