@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Listo la parte 1.">
-      <change afterPath="$PROJECT_DIR$/Homework3 - DannyJimenez - NatifpeeDuran - KevinSalazar.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tareas_Act03_Modifcación_objeto_Usuario_UML_y_Java_G40.docx" beforeDir="false" />
+    <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Atributos email, phone">
       <change beforePath="$PROJECT_DIR$/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +66,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainClass" />
@@ -87,6 +95,7 @@
       <workItem from="1629678268572" duration="11456000" />
       <workItem from="1629750559219" duration="26000" />
       <workItem from="1629750802532" duration="2531000" />
+      <workItem from="1629767641791" duration="629000" />
     </task>
     <task id="LOCAL-00001" summary="Documentos iniciales">
       <created>1629677988859</created>
@@ -116,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629707910209</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Atributos email, phone">
+      <created>1629767717334</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629767717334</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Atributos email, phone">
+      <created>1629767770816</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629767770816</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +163,7 @@
     <MESSAGE value="Clases User, States (Enum), MainClass, con metodos accesores" />
     <MESSAGE value="Cambiar nombres de variables a su correspondencia en inglés." />
     <MESSAGE value="Listo la parte 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Listo la parte 1." />
+    <MESSAGE value="Atributos email, phone" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atributos email, phone" />
   </component>
 </project>

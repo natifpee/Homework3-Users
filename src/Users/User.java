@@ -84,15 +84,15 @@ public class User {
         //We added 1900 to the year because in Date Class start by 1900 and not from 0
         int bornYear = bornDate.getYear() + 1900;
         //We added one to the month because in Date Class start on 0
-        int bornmMonth = bornDate.getMonth() + 1;
+        int bornMonth = bornDate.getMonth() + 1;
 
 
         int age = actualYear - bornYear;
 
 
-        if (bornmMonth > actualMonth){
+        if (bornMonth > actualMonth){
             age--;
-        }else if(bornmMonth == actualMonth){
+        }else if(bornMonth == actualMonth){
             if(bornDay > actualDay){
                 age--;
             }
