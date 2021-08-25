@@ -16,6 +16,7 @@ public class MainClass {
         myData.setPassword("djimenez02");
         myData.setState(States.UNACTIVE);
         myData.setAge(2, 7,2002);
+        myData.setPhone("8402-5990");
         System.out.print(myData);
 
 
