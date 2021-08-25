@@ -152,11 +152,20 @@ public class User {
     }
 
     public String getPhone() {
-        return phone;
+        Pattern P1 = Pattern.compile("([\\d]{4}).([\\d]{4})");
+        Matcher M1 = P1.matcher(phone);
+        if (M1.find())
+        {
+            this.phone = phone;
+        }
+        else
+        {
+            this.phone = "N/A";
+        }
     }
 
     public void setPhone(String aPhone) {
-        this.phone = phone;
+        Pattern ;
     }
 //___________________________________________________________________________________________
     public String getEmail() {
