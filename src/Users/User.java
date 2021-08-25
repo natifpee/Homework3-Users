@@ -187,6 +187,8 @@ public class User {
                 "Estado: " + state + "\n" +
                 "Edad: " + age + "\n" +
                 "Maximo de intentos: " + maximumAttempts + "\n" +
+                "Telefono: " + phone + "\n"+
+                "Email: " + email + "\n"+
                 "-------------------------------------" + "\n";
     }
 }
