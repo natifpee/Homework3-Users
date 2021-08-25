@@ -4,6 +4,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+import java.util.regex.Pattern;
+
+import java.util.regex.Matcher;
+
 public class User {
 
     private String name;
@@ -157,14 +161,21 @@ public class User {
     public void setPhone(int phone) {
         this.phone = phone;
     }
-
+//___________________________________________________________________________________________
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Pattern Email = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mailAddress = Email.matcher(email);
+        if(mailAddress.find()){
+            this.email = email;
+        }else{
+            this.email = "N/A";
+        }
     }
+//___________________________________________________________________________________________
 
     @Override
     public String toString() {
