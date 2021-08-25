@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Atributos email, phone">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,13 +70,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,7 +101,9 @@
       <workItem from="1629678268572" duration="11456000" />
       <workItem from="1629750559219" duration="26000" />
       <workItem from="1629750802532" duration="2531000" />
-      <workItem from="1629767641791" duration="629000" />
+      <workItem from="1629767641791" duration="1784000" />
+      <workItem from="1629834065042" duration="2888000" />
+      <workItem from="1629860570778" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="Documentos iniciales">
       <created>1629677988859</created>
@@ -139,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629767770816</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Atributos email, phone">
+      <created>1629772643887</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629772643887</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

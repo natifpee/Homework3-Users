@@ -1,27 +1,24 @@
 package Users;
-import javax.swing.plaf.nimbus.State;
-import java.util.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class MainClass {
 
 
     public static void main(String[] args) {
-        String name = "Danny Jiménez";
-        Date bornDate = new Date(101, 6, 2);
+        Calendar bornDate = new GregorianCalendar(2002,Calendar.AUGUST, 21);
 
-        User myData;
-        myData = new User();
+        User myData = new User("Danny Jiménez", "dJimenez", "djimenez02");
+        User friendData = new User("Leticia Calderón","lCalderon","lcalderon27");
 
-        myData.setName(name);
-        myData.setLogin("dJimenez");
-        myData.setPassword("djimenez02");
         myData.setState(States.UNACTIVE);
-        myData.setAge(2, 7,2002);
+        myData.setAge(bornDate);
         System.out.print(myData);
 
 
-        myData.setState(States.SUSPENDED);
-        myData.setAge(bornDate);
-        System.out.println(myData);
+        friendData.setState(States.SUSPENDED);
+        friendData.setAge(27, 8, 1997);
+        System.out.println(friendData);
 
 
     }

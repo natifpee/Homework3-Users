@@ -1,8 +1,6 @@
 package Users;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
+import java.util.Calendar;
 
 import java.util.regex.Pattern;
 
@@ -75,7 +73,7 @@ public class User {
         return age;
     }
 
-    public void setAge(Date bornDate){
+    public void setAge(Calendar bornDate){
         Calendar actualDate = Calendar.getInstance();
 
         //We added one to the month because in Calendar Class start on 0
@@ -84,11 +82,10 @@ public class User {
         int actualYear = actualDate.get(Calendar.YEAR);
 
 
-        int bornDay = bornDate.getDate();
-        //We added 1900 to the year because in Date Class start by 1900 and not from 0
-        int bornYear = bornDate.getYear() + 1900;
+        int bornDay = bornDate.get(Calendar.DATE);
+        int bornYear = bornDate.get(Calendar.YEAR);
         //We added one to the month because in Date Class start on 0
-        int bornMonth = bornDate.getMonth() + 1;
+        int bornMonth = bornDate.get(Calendar.MONTH) + 1;
 
 
         int age = actualYear - bornYear;

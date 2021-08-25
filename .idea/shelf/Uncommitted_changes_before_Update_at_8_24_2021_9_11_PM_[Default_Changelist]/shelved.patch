@@ -1,0 +1,161 @@
+Index: src/Users/MainClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Users;\r\nimport javax.swing.plaf.nimbus.State;\r\nimport java.util.*;\r\npublic class MainClass {\r\n\r\n\r\n    public static void main(String[] args) {\r\n        String name = \"Danny Jiménez\";\r\n        Date bornDate = new Date(101, 6, 2);\r\n\r\n        User myData;\r\n        myData = new User();\r\n\r\n        myData.setName(name);\r\n        myData.setLogin(\"dJimenez\");\r\n        myData.setPassword(\"djimenez02\");\r\n        myData.setState(States.UNACTIVE);\r\n        myData.setAge(2, 7,2002);\r\n        System.out.print(myData);\r\n\r\n\r\n        myData.setState(States.SUSPENDED);\r\n        myData.setAge(bornDate);\r\n        System.out.println(myData);\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Users/MainClass.java b/src/Users/MainClass.java
+--- a/src/Users/MainClass.java	(revision 2dce1f6584a5f44130239cf06acbdea13d3c2109)
++++ b/src/Users/MainClass.java	(date 1629834891398)
+@@ -1,27 +1,25 @@
+ package Users;
+ import javax.swing.plaf.nimbus.State;
+-import java.util.*;
++import java.util.Calendar;
++import java.util.GregorianCalendar;
++
+ public class MainClass {
+ 
+ 
+     public static void main(String[] args) {
+-        String name = "Danny Jiménez";
+-        Date bornDate = new Date(101, 6, 2);
++        Calendar bornDate = new GregorianCalendar(2002,Calendar.AUGUST, 21);
+ 
+-        User myData;
+-        myData = new User();
++        User myData = new User("Danny Jiménez", "dJimenez", "djimenez02");
++        User friendData = new User("Leticia Calderón","lCalderon","lcalderon27");
+ 
+-        myData.setName(name);
+-        myData.setLogin("dJimenez");
+-        myData.setPassword("djimenez02");
+         myData.setState(States.UNACTIVE);
+-        myData.setAge(2, 7,2002);
+-        System.out.print(myData);
+-
+-
+-        myData.setState(States.SUSPENDED);
+         myData.setAge(bornDate);
+-        System.out.println(myData);
++        System.out.print(myData);
++
++
++        friendData.setState(States.SUSPENDED);
++        friendData.setAge(27, 8, 1997);
++        System.out.println(friendData);
+ 
+ 
+     }
+Index: src/Users/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Users;\r\n\r\nimport org.jetbrains.annotations.NotNull;\r\n\r\nimport java.util.*;\r\n\r\npublic class User {\r\n\r\n    private String name;\r\n    private String login;\r\n    private String password;\r\n    private States state = States.ACTIVE;\r\n    private int age;\r\n    private int phone;\r\n    private String email;\r\n    private static int maximumAttempts = 3;\r\n\r\n    public User(){\r\n\r\n    }\r\n\r\n    public User(String aName, String aLogin){\r\n        this.name = aName;\r\n        this.login = aLogin;\r\n    }\r\n\r\n    public User(String aName, String aLogin, String aPassword){\r\n        this.name = aName;\r\n        this.login = aLogin;\r\n        this.password = aPassword;\r\n    }\r\n\r\n    public User(String aName, String aLogin, String aPassword, int anAge){\r\n        this.name = aName;\r\n        this.login = aLogin;\r\n        this.age = anAge;\r\n        this.password = aPassword;\r\n    }\r\n\r\n    public User(int anAge, String aName, String aLogin){\r\n        this.name = aName;\r\n        this.login = aLogin;\r\n        this.age = anAge;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String aName) {\r\n        this.name = aName;\r\n    }\r\n\r\n    public String getLogin() {\r\n        return login;\r\n    }\r\n\r\n    public void setLogin(String aLogin) {\r\n        this.login = aLogin;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String aPassword) {\r\n        this.password = aPassword;\r\n    }\r\n\r\n    public int getAge() {\r\n        return age;\r\n    }\r\n\r\n    public void setAge(Date bornDate){\r\n        Calendar actualDate = Calendar.getInstance();\r\n\r\n        //We added one to the month because in Calendar Class start on 0\r\n        int actualMonth = actualDate.get(Calendar.MONTH) + 1;\r\n        int actualDay = actualDate.get(Calendar.DATE);\r\n        int actualYear = actualDate.get(Calendar.YEAR);\r\n\r\n\r\n        int bornDay = bornDate.getDate();\r\n        //We added 1900 to the year because in Date Class start by 1900 and not from 0\r\n        int bornYear = bornDate.getYear() + 1900;\r\n        //We added one to the month because in Date Class start on 0\r\n        int bornMonth = bornDate.getMonth() + 1;\r\n\r\n\r\n        int age = actualYear - bornYear;\r\n\r\n\r\n        if (bornMonth > actualMonth){\r\n            age--;\r\n        }else if(bornMonth == actualMonth){\r\n            if(bornDay > actualDay){\r\n                age--;\r\n            }\r\n        }\r\n\r\n        System.out.println(\"-------------------------------- \\n\"+\r\n                \"Age with setAge(Date): \" + age + \"\\n\"\r\n                +\"------------------------------------------ \\n\");\r\n        this.age = age;\r\n    }\r\n\r\n    public void setAge(int bornDay, int bornMonth, int bornYear){\r\n        Calendar actualDate = Calendar.getInstance();\r\n\r\n        //We add one to the month because in Calendar Class start on 0\r\n        int actualMonth = actualDate.get(Calendar.MONTH) + 1;\r\n        int actualDay = actualDate.get(Calendar.DATE);\r\n        int actualYear = actualDate.get(Calendar.YEAR);\r\n\r\n\r\n        int age = actualYear - bornYear;\r\n\r\n        if (bornMonth > actualMonth){\r\n            age--;\r\n        }else if(bornMonth == actualMonth){\r\n            if(bornDay > actualDay){\r\n                age--;\r\n            }\r\n        }\r\n\r\n        System.out.println(\"---------------------------------------- \\n\"+\r\n                \"Age with setAge(int, int, int): \" + age + \"\\n\"\r\n        +\"------------------------------------------------\\n\");\r\n        this.age = age;\r\n\r\n    }\r\n\r\n    public void setAge(int anAge) {\r\n        this.age = anAge;\r\n    }\r\n\r\n    public static int getMaximumAttempts() {\r\n        return maximumAttempts;\r\n    }\r\n\r\n    public static void setMaximumAttempts(int maximumAttempts) {\r\n        User.maximumAttempts = maximumAttempts;\r\n    }\r\n\r\n    public States getState() {\r\n        return state;\r\n    }\r\n\r\n    public void setState(States aState) {\r\n        this.state = aState;\r\n    }\r\n\r\n    public int getPhone() {\r\n        return phone;\r\n    }\r\n\r\n    public void setPhone(int phone) {\r\n        this.phone = phone;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public void setEmail(String email) {\r\n        this.email = email;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"\\n User \\n\"\r\n                + \"-----------------------------------\"+ \"\\n\" +\r\n                \"Nombre: \" + name + \"\\n\" +\r\n                \"Login: \" + login + \"\\n\" +\r\n                \"Password: \" + password + \"\\n\" +\r\n                \"Estado: \" + state + \"\\n\" +\r\n                \"Edad: \" + age + \"\\n\" +\r\n                \"Maximo de intentos: \" + maximumAttempts + \"\\n\" +\r\n                \"-------------------------------------\" + \"\\n\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Users/User.java b/src/Users/User.java
+--- a/src/Users/User.java	(revision 2dce1f6584a5f44130239cf06acbdea13d3c2109)
++++ b/src/Users/User.java	(date 1629834579993)
+@@ -1,8 +1,7 @@
+ package Users;
+ 
+-import org.jetbrains.annotations.NotNull;
+-
+-import java.util.*;
++import java.util.Calendar;
++import java.util.GregorianCalendar;
+ 
+ public class User {
+ 
+@@ -71,7 +70,7 @@
+         return age;
+     }
+ 
+-    public void setAge(Date bornDate){
++    public void setAge(Calendar bornDate){
+         Calendar actualDate = Calendar.getInstance();
+ 
+         //We added one to the month because in Calendar Class start on 0
+@@ -80,11 +79,10 @@
+         int actualYear = actualDate.get(Calendar.YEAR);
+ 
+ 
+-        int bornDay = bornDate.getDate();
+-        //We added 1900 to the year because in Date Class start by 1900 and not from 0
+-        int bornYear = bornDate.getYear() + 1900;
++        int bornDay = bornDate.get(Calendar.DATE);
++        int bornYear = bornDate.get(Calendar.YEAR);
+         //We added one to the month because in Date Class start on 0
+-        int bornMonth = bornDate.getMonth() + 1;
++        int bornMonth = bornDate.get(Calendar.MONTH) + 1;
+ 
+ 
+         int age = actualYear - bornYear;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"265c677a-3fb2-4abb-bbaf-6bd9bc9c544c\" name=\"Default Changelist\" comment=\"Atributos email, phone\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/Users/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Users/User.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1x6aNzIVl6Z5MWtgrVo6pBbADv7\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/Users\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\estadm\\OneDrive - Estudiantes ITCR\\TEC - Software Engineering\\2021 - II Semestre\\POO\\Homework 3\\src\\Users\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MainClass\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Users.MainClass\" />\r\n      <module name=\"Homework 3\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Users.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainClass\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"265c677a-3fb2-4abb-bbaf-6bd9bc9c544c\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1629677956151</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1629677956151</updated>\r\n      <workItem from=\"1629677957638\" duration=\"175000\" />\r\n      <workItem from=\"1629678268572\" duration=\"11456000\" />\r\n      <workItem from=\"1629750559219\" duration=\"26000\" />\r\n      <workItem from=\"1629750802532\" duration=\"2531000\" />\r\n      <workItem from=\"1629767641791\" duration=\"629000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Documentos iniciales\">\r\n      <created>1629677988859</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629677988859</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Clases User, States (Enum), MainClass, con metodos accesores\">\r\n      <created>1629678595439</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629678595439</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Cambiar nombres de variables a su correspondencia en inglés.\">\r\n      <created>1629679168939</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629679168939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Listo la parte 1.\">\r\n      <created>1629707910209</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629707910209</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Atributos email, phone\">\r\n      <created>1629767717334</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629767717334</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Atributos email, phone\">\r\n      <created>1629767770816</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1629767770816</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Documentos iniciales\" />\r\n    <MESSAGE value=\"Clases User, States (Enum), MainClass, con metodos accesores\" />\r\n    <MESSAGE value=\"Cambiar nombres de variables a su correspondencia en inglés.\" />\r\n    <MESSAGE value=\"Listo la parte 1.\" />\r\n    <MESSAGE value=\"Atributos email, phone\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Atributos email, phone\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2dce1f6584a5f44130239cf06acbdea13d3c2109)
++++ b/.idea/workspace.xml	(date 1629861109957)
+@@ -2,6 +2,10 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Atributos email, phone">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Users/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/MainClass.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/User.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -62,17 +66,6 @@
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+-      <option name="arquillianRunConfiguration">
+-        <value>
+-          <option name="containerStateName" value="" />
+-        </value>
+-      </option>
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -95,7 +88,9 @@
+       <workItem from="1629678268572" duration="11456000" />
+       <workItem from="1629750559219" duration="26000" />
+       <workItem from="1629750802532" duration="2531000" />
+-      <workItem from="1629767641791" duration="629000" />
++      <workItem from="1629767641791" duration="1784000" />
++      <workItem from="1629834065042" duration="2888000" />
++      <workItem from="1629860570778" duration="332000" />
+     </task>
+     <task id="LOCAL-00001" summary="Documentos iniciales">
+       <created>1629677988859</created>
+@@ -139,7 +134,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1629767770816</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="Atributos email, phone">
++      <created>1629772643887</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1629772643887</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
