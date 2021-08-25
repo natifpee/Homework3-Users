@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Atributos email, phone">
+    <list default="true" id="265c677a-3fb2-4abb-bbaf-6bd9bc9c544c" name="Default Changelist" comment="Parte 1 y prueba de parte 1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/MainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework 3/Users/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +101,7 @@
       <workItem from="1629767641791" duration="1784000" />
       <workItem from="1629834065042" duration="2888000" />
       <workItem from="1629860570778" duration="332000" />
+      <workItem from="1629861107060" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="Documentos iniciales">
       <created>1629677988859</created>
@@ -154,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629772643887</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Parte 1 y prueba de parte 1.">
+      <created>1629861223094</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1629861223094</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +184,7 @@
     <MESSAGE value="Cambiar nombres de variables a su correspondencia en inglés." />
     <MESSAGE value="Listo la parte 1." />
     <MESSAGE value="Atributos email, phone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atributos email, phone" />
+    <MESSAGE value="Parte 1 y prueba de parte 1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Parte 1 y prueba de parte 1." />
   </component>
 </project>

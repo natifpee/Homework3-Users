@@ -13,7 +13,7 @@ public class User {
     private String password;
     private States state = States.ACTIVE;
     private int age;
-    private int phone;
+    private String phone;
     private String email;
     private static int maximumAttempts = 3;
 
@@ -151,11 +151,11 @@ public class User {
         this.state = aState;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String aPhone) {
         this.phone = phone;
     }
 //___________________________________________________________________________________________
@@ -163,11 +163,11 @@ public class User {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String anEmail) {
         Pattern Email = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher mailAddress = Email.matcher(email);
         if(mailAddress.find()){
-            this.email = email;
+            this.email = anEmail;
         }else{
             this.email = "N/A";
         }
@@ -180,6 +180,8 @@ public class User {
                 + "-----------------------------------"+ "\n" +
                 "Nombre: " + name + "\n" +
                 "Login: " + login + "\n" +
+                "Phone: " + phone + "\n" +
+                "Email: " + email + "\n" +
                 "Password: " + password + "\n" +
                 "Estado: " + state + "\n" +
                 "Edad: " + age + "\n" +
